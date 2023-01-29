@@ -14,6 +14,7 @@ struct MapViewRepresentable: UIViewRepresentable {
     // the UI Kit Map View Component
     let mapView = MKMapView()
     let locationManager = LocationManager()
+    @EnvironmentObject var locationViewModel: LocationSearchViewModel
     
     // makes the map view that is displayable, sets location and zooms in on location
     func makeUIView(context: Context) -> some UIView {
@@ -27,6 +28,10 @@ struct MapViewRepresentable: UIViewRepresentable {
     
     // updates the view when user makes changes
     func updateUIView(_ uiView: UIViewType, context: Context) {
+        if let coordinate = locationViewModel.selectedLocationCoordinate {
+            print("DEBUG: Selected location in map view is \(coordinate)")
+        }
+        
         
     }
     

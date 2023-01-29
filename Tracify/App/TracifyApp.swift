@@ -9,12 +9,14 @@ import SwiftUI
 
 @main
 struct TracifyApp: App {
-    let persistenceController = PersistenceController.shared
+    @StateObject var locationViewModel = LocationSearchViewModel()
+//    let persistenceController = PersistenceController.shared
 
     var body: some Scene {
         WindowGroup {
             HomeView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environmentObject(locationViewModel)
+//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }
