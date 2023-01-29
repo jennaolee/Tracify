@@ -13,6 +13,9 @@
 		002E43E02985F23A0050E059 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 002E43DF2985F23A0050E059 /* Preview Assets.xcassets */; };
 		002E43E22985F23A0050E059 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E43E12985F23A0050E059 /* Persistence.swift */; };
 		002E43E52985F23A0050E059 /* Tracify.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 002E43E32985F23A0050E059 /* Tracify.xcdatamodeld */; };
+		002E43F32985F7600050E059 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E43F22985F7600050E059 /* HomeView.swift */; };
+		002E43F52985F84F0050E059 /* MapViewRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E43F42985F84F0050E059 /* MapViewRepresentable.swift */; };
+		002E43F72985FC530050E059 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E43F62985FC530050E059 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +26,9 @@
 		002E43DF2985F23A0050E059 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		002E43E12985F23A0050E059 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		002E43E42985F23A0050E059 /* Tracify.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Tracify.xcdatamodel; sourceTree = "<group>"; };
+		002E43F22985F7600050E059 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		002E43F42985F84F0050E059 /* MapViewRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewRepresentable.swift; sourceTree = "<group>"; };
+		002E43F62985FC530050E059 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +61,11 @@
 		002E43D72985F2300050E059 /* Tracify */ = {
 			isa = PBXGroup;
 			children = (
-				002E43D82985F2300050E059 /* TracifyApp.swift */,
+				002E43EF2985F65B0050E059 /* Models */,
+				002E43EE2985F6550050E059 /* Managers */,
+				002E43ED2985F64E0050E059 /* Extensions */,
+				002E43EC2985F6490050E059 /* Core */,
+				002E43EB2985F6420050E059 /* App */,
 				002E43DA2985F2300050E059 /* ContentView.swift */,
 				002E43DC2985F23A0050E059 /* Assets.xcassets */,
 				002E43E12985F23A0050E059 /* Persistence.swift */,
@@ -71,6 +81,61 @@
 				002E43DF2985F23A0050E059 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		002E43EB2985F6420050E059 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				002E43D82985F2300050E059 /* TracifyApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		002E43EC2985F6490050E059 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				002E43F12985F7420050E059 /* Views */,
+				002E43F02985F7370050E059 /* ViewModels */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		002E43ED2985F64E0050E059 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		002E43EE2985F6550050E059 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				002E43F62985FC530050E059 /* LocationManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		002E43EF2985F65B0050E059 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		002E43F02985F7370050E059 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		002E43F12985F7420050E059 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				002E43F22985F7600050E059 /* HomeView.swift */,
+				002E43F42985F84F0050E059 /* MapViewRepresentable.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -146,6 +211,9 @@
 				002E43E22985F23A0050E059 /* Persistence.swift in Sources */,
 				002E43DB2985F2300050E059 /* ContentView.swift in Sources */,
 				002E43E52985F23A0050E059 /* Tracify.xcdatamodeld in Sources */,
+				002E43F72985FC530050E059 /* LocationManager.swift in Sources */,
+				002E43F32985F7600050E059 /* HomeView.swift in Sources */,
+				002E43F52985F84F0050E059 /* MapViewRepresentable.swift in Sources */,
 				002E43D92985F2300050E059 /* TracifyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
