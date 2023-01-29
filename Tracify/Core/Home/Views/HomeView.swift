@@ -25,6 +25,7 @@ struct HomeView: View {
                     }
             }
             
+            // when showLocationSearchView changes in the MapViewActionButton class it will also change here b/c those properties are bound together
             MapViewActionButton(showLocationSearchView: $showLocationSearchView)
                 .padding(.leading)
                 .padding(.top, 4)
