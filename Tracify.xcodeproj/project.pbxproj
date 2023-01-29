@@ -94,8 +94,8 @@
 		002E43EC2985F6490050E059 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				002E43F12985F7420050E059 /* Views */,
-				002E43F02985F7370050E059 /* ViewModels */,
+				003542EA2986094B0087B89F /* LocationSearch */,
+				003542E92986092E0087B89F /* Home */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -136,6 +136,22 @@
 				002E43F42985F84F0050E059 /* MapViewRepresentable.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		003542E92986092E0087B89F /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				002E43F12985F7420050E059 /* Views */,
+				002E43F02985F7370050E059 /* ViewModels */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		003542EA2986094B0087B89F /* LocationSearch */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LocationSearch;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -345,6 +361,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Tracify/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please allow us to access your location to find nearby reported items";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -373,6 +390,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Tracify/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please allow us to access your location to find nearby reported items";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
