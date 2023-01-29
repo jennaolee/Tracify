@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MapViewActionButton: View {
+    @Binding var showLocationSearchView: Bool
     var body: some View {
         Button {
             
@@ -26,6 +27,6 @@ struct MapViewActionButton: View {
 
 struct MapViewActionButton_Previews: PreviewProvider {
     static var previews: some View {
-        MapViewActionButton()
+        MapViewActionButton(showLocationSearchView: .constant(true))
     }
 }
