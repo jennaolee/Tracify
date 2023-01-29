@@ -18,6 +18,7 @@
 		002E43F72985FC530050E059 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 002E43F62985FC530050E059 /* LocationManager.swift */; };
 		003542EE298609E00087B89F /* LocationSearchActivationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003542ED298609E00087B89F /* LocationSearchActivationView.swift */; };
 		003542F029860CEC0087B89F /* MapViewActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003542EF29860CEC0087B89F /* MapViewActionButton.swift */; };
+		003542F229860E630087B89F /* LocationSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003542F129860E630087B89F /* LocationSearchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		002E43F62985FC530050E059 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		003542ED298609E00087B89F /* LocationSearchActivationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchActivationView.swift; sourceTree = "<group>"; };
 		003542EF29860CEC0087B89F /* MapViewActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewActionButton.swift; sourceTree = "<group>"; };
+		003542F129860E630087B89F /* LocationSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				003542ED298609E00087B89F /* LocationSearchActivationView.swift */,
+				003542F129860E630087B89F /* LocationSearchView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				002E43E22985F23A0050E059 /* Persistence.swift in Sources */,
 				002E43DB2985F2300050E059 /* ContentView.swift in Sources */,
 				002E43E52985F23A0050E059 /* Tracify.xcdatamodeld in Sources */,
+				003542F229860E630087B89F /* LocationSearchView.swift in Sources */,
 				002E43F72985FC530050E059 /* LocationManager.swift in Sources */,
 				002E43F32985F7600050E059 /* HomeView.swift in Sources */,
 				002E43F52985F84F0050E059 /* MapViewRepresentable.swift in Sources */,
