@@ -16,12 +16,15 @@ struct HomeView: View {
                 .ignoresSafeArea()
             
             if showLocationSearchView {
-                LocationSearchView()
+                LocationSearchView(showLocationSearchView: $showLocationSearchView)
             } else {
                 LocationSearchActivationView()
                     .padding(.top, 72)
                     .onTapGesture {
-                        showLocationSearchView.toggle()
+                        withAnimation(.spring()) {
+                            showLocationSearchView.toggle()
+                            // when clicked, it will toggle between HomeView and SearchView
+                        }
                     }
             }
             

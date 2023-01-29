@@ -20,6 +20,7 @@
 		003542F029860CEC0087B89F /* MapViewActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003542EF29860CEC0087B89F /* MapViewActionButton.swift */; };
 		003542F229860E630087B89F /* LocationSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003542F129860E630087B89F /* LocationSearchView.swift */; };
 		003542F6298617F80087B89F /* LocationSearchResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003542F5298617F80087B89F /* LocationSearchResultsCell.swift */; };
+		003542F8298625280087B89F /* LocationSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003542F7298625280087B89F /* LocationSearchViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		003542EF29860CEC0087B89F /* MapViewActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewActionButton.swift; sourceTree = "<group>"; };
 		003542F129860E630087B89F /* LocationSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchView.swift; sourceTree = "<group>"; };
 		003542F5298617F80087B89F /* LocationSearchResultsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchResultsCell.swift; sourceTree = "<group>"; };
+		003542F7298625280087B89F /* LocationSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,6 +180,7 @@
 		003542EC298609C20087B89F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				003542F7298625280087B89F /* LocationSearchViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -255,6 +258,7 @@
 				003542EE298609E00087B89F /* LocationSearchActivationView.swift in Sources */,
 				003542F029860CEC0087B89F /* MapViewActionButton.swift in Sources */,
 				002E43E22985F23A0050E059 /* Persistence.swift in Sources */,
+				003542F8298625280087B89F /* LocationSearchViewModel.swift in Sources */,
 				002E43DB2985F2300050E059 /* ContentView.swift in Sources */,
 				002E43E52985F23A0050E059 /* Tracify.xcdatamodeld in Sources */,
 				003542F229860E630087B89F /* LocationSearchView.swift in Sources */,

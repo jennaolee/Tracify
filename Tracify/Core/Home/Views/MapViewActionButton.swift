@@ -2,7 +2,7 @@
 //  MapViewActionButton.swift
 //  Tracify
 //
-//  Created by Stephen Lee on 2023-01-28.
+//  Created by Jenna Lee on 2023-01-28.
 //
 
 import SwiftUI
@@ -11,9 +11,13 @@ struct MapViewActionButton: View {
     @Binding var showLocationSearchView: Bool
     var body: some View {
         Button {
-            showLocationSearchView.toggle()
+            // when clicked, it will toggle between HomeView and SearchView
+            withAnimation(.spring()) {
+                showLocationSearchView.toggle()
+
+            }
         } label: {
-            Image(systemName: "line.3.horizontal")
+            Image(systemName: showLocationSearchView ? "arrow.left" : "line.3.horizontal")
                 .font(.title2)
                 .foregroundColor(.black)
                 .padding()

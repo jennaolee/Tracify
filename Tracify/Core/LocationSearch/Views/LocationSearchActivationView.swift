@@ -2,7 +2,7 @@
 //  LocationSearchActivationView.swift
 //  Tracify
 //
-//  Created by Stephen Lee on 2023-01-28.
+//  Created by Jenna Lee on 2023-01-28.
 //
 
 import SwiftUI
