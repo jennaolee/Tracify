@@ -8,9 +8,14 @@
 import SwiftUI
 
 struct LocationSearchView: View {
+    // @State = can read & write a value in SwiftUI
     @State private var startLocationText = ""
+    
+    // @EnvironmentObject = share data between views and ensure views are automatically updated when data changes
     @EnvironmentObject var viewModel: LocationSearchViewModel
-    @Binding var showLocationSearchView: Bool
+    
+    // @Binding = declare that one value actually comes from elsewhere, and should be shared in both places
+    @Binding var mapState: MapViewState
     
     
 
@@ -65,10 +70,8 @@ struct LocationSearchView: View {
                         result in
                         LocationSearchResultsCell(title: result.title, subtitle: result.subtitle)
                             .onTapGesture {
-                                viewModel
-                                    .selectLocation(result)
-                                showLocationSearchView.toggle()
-                                
+                                viewModel.selectLocation(result)
+                                mapState = .locationSelected
                             }
                     }
                 }
@@ -80,6 +83,6 @@ struct LocationSearchView: View {
 
 struct LocationSearchView_Previews: PreviewProvider {
     static var previews: some View {
-        LocationSearchView(showLocationSearchView: .constant(false))
+        LocationSearchView(mapState: .constant(.searchingForLocation))
     }
 }

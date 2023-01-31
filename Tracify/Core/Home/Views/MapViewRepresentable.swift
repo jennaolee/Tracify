@@ -11,7 +11,7 @@ import MapKit
 // adds more capability to the SwiftUI Map Component capability
 struct MapViewRepresentable: UIViewRepresentable {
     
-    // the UI Kit Map View Component
+    // MKMapView = the embedded map (Apple Maps)
     let mapView = MKMapView()
     let locationManager = LocationManager()
     @EnvironmentObject var locationViewModel: LocationSearchViewModel
@@ -39,7 +39,6 @@ struct MapViewRepresentable: UIViewRepresentable {
         
     }
     
-    //
     func makeCoordinator() -> MapCoordinator {
         return MapCoordinator(parent: self)
     }
@@ -52,11 +51,9 @@ extension MapViewRepresentable {
         
         // MARK: - Properties
         
-        
         // used to communicate between MapCoordinator and MapViewRepresentable class
         let parent: MapViewRepresentable
         var userLocationCoordinate: CLLocationCoordinate2D?
-        
         
         // MARK: - Lifecycle
         init(parent:MapViewRepresentable) {
@@ -78,6 +75,7 @@ extension MapViewRepresentable {
             parent.mapView.setRegion(region, animated:true)
         }
         
+        // adds a polyline with thw following customizations
         func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
             let polyline = MKPolylineRenderer(overlay: overlay)
             polyline.strokeColor = .systemBlue
@@ -102,6 +100,7 @@ extension MapViewRepresentable {
             
         }
         
+        // configures the polyline of the given destination route
         func configurePolyline(withDestinationCoordinate coordinate: CLLocationCoordinate2D) {
             guard let userLocationCoordinate = self.userLocationCoordinate else { return }
             getDesitnationRoute(from: userLocationCoordinate, to: coordinate) { route in
@@ -111,6 +110,7 @@ extension MapViewRepresentable {
             
         }
         
+        // get the destination route to be turned into a polyline
         func getDesitnationRoute(from userLocation: CLLocationCoordinate2D,
                                  to destinationCoordinate: CLLocationCoordinate2D,
                                  completion: @escaping(MKRoute) -> Void) {

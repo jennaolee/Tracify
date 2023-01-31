@@ -8,28 +8,32 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State private var showLocationSearchView = false
+    @State private var mapState = MapViewState.noInput
     
     var body: some View {
         ZStack(alignment: .top){
+            // fit to screen
             MapViewRepresentable()
                 .ignoresSafeArea()
             
-            if showLocationSearchView {
-                LocationSearchView(showLocationSearchView: $showLocationSearchView)
-            } else {
+            if mapState == .searchingForLocation {
+                // show the locationSearchView
+                LocationSearchView(mapState: $mapState)
+                
+            } else if mapState == .noInput {
+                // show searchActivationView
                 LocationSearchActivationView()
                     .padding(.top, 72)
                     .onTapGesture {
                         withAnimation(.spring()) {
-                            showLocationSearchView.toggle()
-                            // when clicked, it will toggle between HomeView and SearchView
+                            mapState = .searchingForLocation
+                            // when SearchActivation is clicked, it will set the view to searchingForLocation
                         }
                     }
             }
             
-            // when showLocationSearchView changes in the MapViewActionButton class it will also change here b/c those properties are bound together
-            MapViewActionButton(showLocationSearchView: $showLocationSearchView)
+            // when mapState changes in the MapViewActionButton class it will also change here b/c those properties are bound together
+            MapViewActionButton(mapState: $mapState)
                 .padding(.leading)
                 .padding(.top, 4)
         }

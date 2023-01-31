@@ -8,12 +8,16 @@
 import CoreLocation
 
 // request the location from the user and update once
+// ObservableObject - base class for objects that are observable by implementingINotifyPropertyChanged and INotifyProperty Changing interfaces. A starting point for all objects that need to support property change notifications
 class LocationManager: NSObject, ObservableObject {
+    
+    // CLLocationManager object is the central place to manage the app's location behaviours
     private let locationManager = CLLocationManager()
     
     override init() {
         super.init()
         locationManager.delegate = self
+        
         // gives the most accurate user location
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         

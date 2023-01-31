@@ -9,9 +9,10 @@ import SwiftUI
 
 struct LocationSearchResultsCell: View {
     
+    // Item
     let title:String
+    // Address
     let subtitle:String
-    
 
     var body: some View {
         HStack {
