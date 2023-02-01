@@ -21,7 +21,10 @@
 		003542F229860E630087B89F /* LocationSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003542F129860E630087B89F /* LocationSearchView.swift */; };
 		003542F6298617F80087B89F /* LocationSearchResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003542F5298617F80087B89F /* LocationSearchResultsCell.swift */; };
 		003542F8298625280087B89F /* LocationSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 003542F7298625280087B89F /* LocationSearchViewModel.swift */; };
+		0066426B298A6A5700AE3F98 /* MusicInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0066426A298A6A5700AE3F98 /* MusicInfoView.swift */; };
 		00CEDD33298732EC00DC5FEC /* MapViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CEDD32298732EC00DC5FEC /* MapViewState.swift */; };
+		00CEDD3B2989248E00DC5FEC /* MusicSubmissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CEDD3A2989248E00DC5FEC /* MusicSubmissionView.swift */; };
+		00CEDD3D298924A800DC5FEC /* MusicResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00CEDD3C298924A800DC5FEC /* MusicResultsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +43,10 @@
 		003542F129860E630087B89F /* LocationSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchView.swift; sourceTree = "<group>"; };
 		003542F5298617F80087B89F /* LocationSearchResultsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchResultsCell.swift; sourceTree = "<group>"; };
 		003542F7298625280087B89F /* LocationSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchViewModel.swift; sourceTree = "<group>"; };
+		0066426A298A6A5700AE3F98 /* MusicInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicInfoView.swift; sourceTree = "<group>"; };
 		00CEDD32298732EC00DC5FEC /* MapViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewState.swift; sourceTree = "<group>"; };
+		00CEDD3A2989248E00DC5FEC /* MusicSubmissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSubmissionView.swift; sourceTree = "<group>"; };
+		00CEDD3C298924A800DC5FEC /* MusicResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicResultsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +112,7 @@
 		002E43EC2985F6490050E059 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				00CEDD392989246300DC5FEC /* Music */,
 				003542EA2986094B0087B89F /* LocationSearch */,
 				003542E92986092E0087B89F /* Home */,
 			);
@@ -188,6 +195,16 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		00CEDD392989246300DC5FEC /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				00CEDD3A2989248E00DC5FEC /* MusicSubmissionView.swift */,
+				00CEDD3C298924A800DC5FEC /* MusicResultsView.swift */,
+				0066426A298A6A5700AE3F98 /* MusicInfoView.swift */,
+			);
+			path = Music;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -258,16 +275,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00CEDD3D298924A800DC5FEC /* MusicResultsView.swift in Sources */,
 				003542EE298609E00087B89F /* LocationSearchActivationView.swift in Sources */,
 				003542F029860CEC0087B89F /* MapViewActionButton.swift in Sources */,
 				002E43E22985F23A0050E059 /* Persistence.swift in Sources */,
 				003542F8298625280087B89F /* LocationSearchViewModel.swift in Sources */,
 				00CEDD33298732EC00DC5FEC /* MapViewState.swift in Sources */,
+				0066426B298A6A5700AE3F98 /* MusicInfoView.swift in Sources */,
 				002E43DB2985F2300050E059 /* ContentView.swift in Sources */,
 				002E43E52985F23A0050E059 /* Tracify.xcdatamodeld in Sources */,
 				003542F229860E630087B89F /* LocationSearchView.swift in Sources */,
 				002E43F72985FC530050E059 /* LocationManager.swift in Sources */,
 				002E43F32985F7600050E059 /* HomeView.swift in Sources */,
+				00CEDD3B2989248E00DC5FEC /* MusicSubmissionView.swift in Sources */,
 				003542F6298617F80087B89F /* LocationSearchResultsCell.swift in Sources */,
 				002E43F52985F84F0050E059 /* MapViewRepresentable.swift in Sources */,
 				002E43D92985F2300050E059 /* TracifyApp.swift in Sources */,

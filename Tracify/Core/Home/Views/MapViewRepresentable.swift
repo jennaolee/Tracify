@@ -14,6 +14,7 @@ struct MapViewRepresentable: UIViewRepresentable {
     // MKMapView = the embedded map (Apple Maps)
     let mapView = MKMapView()
     let locationManager = LocationManager()
+    @Binding var mapState: MapViewState
     @EnvironmentObject var locationViewModel: LocationSearchViewModel
     
     // makes the map view that is displayable, sets location and zooms in on location
@@ -28,14 +29,30 @@ struct MapViewRepresentable: UIViewRepresentable {
     
     // updates the view when user makes changes
     func updateUIView(_ uiView: UIViewType, context: Context) {
-        if let coordinate = locationViewModel.selectedLocationCoordinate {
-            print("DEBUG: Selected location in map view is \(coordinate)")
-            context.coordinator.addAndSelectAnnotation(withCoordinate: coordinate)
-            context.coordinator.configurePolyline(withDestinationCoordinate: coordinate)
+        print("DEBUG:  Map state is \(mapState)")
+        
+        switch mapState {
+        case .noInput:
+            // clears the map
+            context.coordinator.clearMapViewAndRecenterOnUserLocation()
+            break
+        case .searchingForLocation:
+            break
+            
+        case .locationSelected:
+            if let coordinate = locationViewModel.selectedLocationCoordinate {
+                print("DEBUG: Selected location in map view is \(coordinate)")
+                context.coordinator.addAndSelectAnnotation(withCoordinate: coordinate)
+                context.coordinator.configurePolyline(withDestinationCoordinate: coordinate)
+            }
+            break
         }
         
         
         
+//        if mapState == .noInput {
+//            context.coordinator.clearMapViewAnfRecenterOnUserLocation()
+//        }
         
     }
     
@@ -54,6 +71,8 @@ extension MapViewRepresentable {
         // used to communicate between MapCoordinator and MapViewRepresentable class
         let parent: MapViewRepresentable
         var userLocationCoordinate: CLLocationCoordinate2D?
+        // to be updated the same as the userLocation coordinate
+        var currentRegion: MKCoordinateRegion?
         
         // MARK: - Lifecycle
         init(parent:MapViewRepresentable) {
@@ -70,6 +89,9 @@ extension MapViewRepresentable {
                 center: CLLocationCoordinate2D(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude),
                 span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
             )
+            
+            // everytime the user updates their location, the currentRegion will update as well
+            self.currentRegion = region
             
             // sets the region based on the user's location on mapView
             parent.mapView.setRegion(region, animated:true)
@@ -133,6 +155,17 @@ extension MapViewRepresentable {
                 // get the first route (usually the fastest)
                 guard let route = response?.routes.first else { return }
                 completion(route)
+            }
+        }
+        
+        // clear the mapView & re-center
+        func clearMapViewAndRecenterOnUserLocation() {
+            // remove all overlays & annotations, re-center the map
+            parent.mapView.removeAnnotations(parent.mapView.annotations)
+            parent.mapView.removeOverlays(parent.mapView.overlays)
+            
+            if let currentRegion = currentRegion {
+                parent.mapView.setRegion(currentRegion, animated: true)
             }
         }
     }
